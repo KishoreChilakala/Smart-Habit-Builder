@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart Habit Builder</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bullseye"></i>
+                <span>Smart Habit Builder</span>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Welcome, John!</span>
+                    <div class="user-dropdown">
+                        <button class="dropdown-toggle">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=1" alt="Profile" class="user-avatar">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                Profile
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="index.html" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1 class="dashboard-title">Your Habit Dashboard</h1>
+                <p class="dashboard-subtitle">Track your progress and build better habits</p>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <section class="add-habit-section">
+                <div class="add-habit-card">
+                    <h2>Add New Habit</h2>
+                    <form id="habit-form" class="habit-form">
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="habit-name" 
+                                placeholder="Enter habit name (e.g., Drink 8 glasses of water)"
+                                required
+                                maxlength="50"
+                            >
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Add Habit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="total-habits">0</span>
+                            <span class="stat-label">Total Habits</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="completed-today">0</span>
+                            <span class="stat-label">Completed Today</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="completion-rate">0%</span>
+                            <span class="stat-label">Completion Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="habits-section">
+                <div class="section-header">
+                    <h2>Your Habits</h2>
+                    <div class="view-toggle">
+                        <button class="toggle-btn active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="toggle-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="habits-container" class="habits-grid">
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>No habits yet</h3>
+                        <p>Start building better habits by adding your first one above!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
